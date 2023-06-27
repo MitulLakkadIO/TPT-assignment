@@ -1,5 +1,5 @@
 import React from "react";
-import PhotoList from "./Components/PhotoList";
+import PhotoList from "./screen/photoList/PhotoList";
 
 const App = () => {
   return (

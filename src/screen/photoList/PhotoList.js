@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./PhotoList.css";
 
-const PhotoItem = ({ title, thumbnailUrl }) => (
-  <div>
-    <h3>{title}</h3>
-    <img src={thumbnailUrl} alt={title} />
-  </div>
-);
+import Card from "../../components/card/Card";
+import Spinner from "../../components/spinner/Spinner";
+import ToastMessage from "../../components/toastMessage/ToastMessage";
 
 const PhotoList = () => {
   const [photos, setPhotos] = useState([]);
@@ -35,19 +32,34 @@ const PhotoList = () => {
   }, []);
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="spinner-container">
+        <Spinner />;
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div className="body-container">
+        <ToastMessage className="tosat-container" message={error.message} />
+      </div>
+    );
   }
 
   return (
-    <div className="photoList">
-      {photos.map((photo) => (
-        <PhotoItem title={photo.title} thumbnailUrl={photo.thumbnailUrl} />
-      ))}
-    </div>
+    <>
+      <h1 className="title">Photo Gallery</h1>
+      <div className="card-container">
+        {photos.map((photo) => (
+          <Card
+            key={photo.id}
+            imageUrl={photo.thumbnailUrl}
+            title={photo.title}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 export default PhotoList;
