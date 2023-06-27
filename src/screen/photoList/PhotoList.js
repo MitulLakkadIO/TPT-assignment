@@ -41,8 +41,8 @@ const PhotoList = () => {
 
   if (error) {
     return (
-      <div className="toast">
-        <ToastMessage className="tosat-container" message={error.message} />
+      <div className="toast-container">
+        <ToastMessage className="tosatMessage" message={error.message} />
       </div>
     );
   }

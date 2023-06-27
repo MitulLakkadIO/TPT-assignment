@@ -1,4 +1,5 @@
 import React from "react";
+import "./Card.css";
 
 const Card = ({ imageUrl, title, description }) => {
   return (
@@ -8,7 +9,6 @@ const Card = ({ imageUrl, title, description }) => {
         <div className="card-content">
           <h3 className="card-title">{title}</h3>
           <p className="card-description">{description}</p>
-          {/* <button className="card-button">Learn More</button> */}
         </div>
       </div>
     </>

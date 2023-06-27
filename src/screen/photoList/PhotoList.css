@@ -1,6 +1,3 @@
-.toast{
-    position: relative;
-}
 
 .card-container {
     padding: 10px 30px;
@@ -12,10 +9,10 @@
 .title{
     display: flex;
     justify-content: center;
-   
+    
 }
 
-.card {
+/* .card {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -53,7 +50,7 @@
 .card-description {
     margin: 8px 0;
     font-size: 16px;
-}
+} */
 
 .spinner-container{
     display: flex;
@@ -61,6 +58,10 @@
     height: 100vh;
 }
 
-.tosat-container{
+.tosatMessage{
     position: absolute;
+}
+
+.toast-container{
+    position: relative;
 }
