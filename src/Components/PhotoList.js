@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./PhotoList.css";
 
 const PhotoItem = ({ title, thumbnailUrl }) => (
   <div>
@@ -34,7 +35,7 @@ const PhotoList = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
@@ -42,16 +43,11 @@ const PhotoList = () => {
   }
 
   return (
-    <div>
+    <div className="photoList">
       {photos.map((photo) => (
-        <PhotoItem
-          key={photo.id}
-          title={photo.title}
-          thumbnailUrl={photo.thumbnailUrl}
-        />
+        <PhotoItem title={photo.title} thumbnailUrl={photo.thumbnailUrl} />
       ))}
     </div>
   );
 };
-
 export default PhotoList;
