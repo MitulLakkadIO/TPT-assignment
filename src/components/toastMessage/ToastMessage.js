@@ -15,8 +15,10 @@ const ToastMessage = ({ message, duration = 3000, onClose }) => {
   }, [duration, onClose]);
 
   return (
-    <div className={`toast-message ${isVisible ? "visible" : ""}`}>
-      <div className="message">Error : {message}</div>
+    <div className="toast-container">
+      <div className={`toast-message ${isVisible ? "visible" : ""}`}>
+        <div className="message">Error : {message}</div>
+      </div>
     </div>
   );
 };

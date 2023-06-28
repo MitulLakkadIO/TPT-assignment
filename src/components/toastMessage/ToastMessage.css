@@ -1,3 +1,7 @@
+.toast-container {
+    position: relative;
+}
+
 .toast-message {
     position: fixed;
     top: 20px;
