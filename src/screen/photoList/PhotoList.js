@@ -32,11 +32,7 @@ const PhotoList = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <div className="spinner-container">
-        <Spinner />;
-      </div>
-    );
+    return <Spinner />;
   }
 
   if (error) {
